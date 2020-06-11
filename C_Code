@@ -1,0 +1,60 @@
+/******************************************************************************
+
+                           Armstrong Number Check for n digit Number
+                           
+                                 by Santanu Anand :
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int n , sum=0 , count=0,  duplicate , Duplicate_1 , Digit , power , i ,a ;
+    
+    printf("Number daal Bhai . Abhi Bataata hun.. :");
+    scanf("%d",&n);
+    
+    Duplicate_1 = n;
+    duplicate = Duplicate_1;
+    
+    while(n !=0)
+    {
+        a= n%10;
+        n=n/10;
+         count++;
+    }
+    
+    printf("No of Digits = %d\n\n",count);
+    
+    while(Duplicate_1 != 0)
+    {
+         power=1, i=1;
+         
+         Digit = Duplicate_1%10;
+         while(i<=count)
+         {
+             power=power* Digit;
+             i++;
+         }
+         
+        printf("%d ^ %d = %d \n",Digit,count, power);
+        
+        sum= sum + power;
+        Duplicate_1=  Duplicate_1 / 10 ;
+         
+    }
+    
+    printf("Final Sum = %d \n\n",sum);
+    
+    if(duplicate==sum)
+    {
+    printf("Yes !  It is an Armstrong NUmber ");
+    }
+    else
+    {
+    printf("Bhagwaan Jaane Bhaiya :))");
+    }
+
+    return 0;
+}
